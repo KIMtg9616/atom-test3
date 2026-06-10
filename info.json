@@ -23,7 +23,7 @@
     "vi": "Trang này là tài liệu mô phỏng tương tác thử nghiệm dùng cho lớp học. Một số đại lượng vật lí được biểu diễn bằng giá trị tương đối để hỗ trợ việc hiểu bài."
   },
    "_comment": "점검중이면 maintenanceEnabled: true | 아니라면 maintenanceEnabled: false | 공지가 없다면 비워두기 "
-  "maintenanceEnabled": true,
+  "maintenanceEnabled": false,
 "maintenanceText": {
   "ko": "현재 웹페이지 수정 작업을 진행 중입니다. 잠시 후 다시 접속해 주세요.",
   "en": "The page is currently being updated. Please visit again later.",
