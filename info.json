@@ -21,5 +21,13 @@
     "zh": "本页面是用于课堂的互动式模拟试用资料。部分物理量为了帮助理解，以相对值表示。",
     "ja": "このページは授業用の体験型シミュレーション試用教材です。一部の物理量は理解を助けるため相対値で表しています。",
     "vi": "Trang này là tài liệu mô phỏng tương tác thử nghiệm dùng cho lớp học. Một số đại lượng vật lí được biểu diễn bằng giá trị tương đối để hỗ trợ việc hiểu bài."
-  }
+  },
+  "maintenanceEnabled": true,
+"maintenanceText": {
+  "ko": "현재 웹페이지 수정 작업을 진행 중입니다. 잠시 후 다시 접속해 주세요.",
+  "en": "The page is currently being updated. Please visit again later.",
+  "zh": "网页正在更新中。请稍后再访问。",
+  "ja": "現在ウェブページを更新しています。しばらくしてから再度アクセスしてください。",
+  "vi": "Trang hiện đang được cập nhật. Vui lòng quay lại sau."
+}
 }
