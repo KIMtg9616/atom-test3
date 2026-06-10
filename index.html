@@ -2061,6 +2061,11 @@
         zh: '网页正在更新中。请稍后再访问。',
         ja: '現在ウェブページを更新しています。しばらくしてから再度アクセスしてください。',
         vi: 'Trang hiện đang được cập nhật. Vui lòng quay lại sau.'
+      },
+      maintenanceBypass: {
+        enabled: false,
+        param: 'preview',
+        key: ''
       }
     };
     let pageInfoData = null;
@@ -3007,7 +3012,31 @@ clearMeasurePoints: '측정 점 지우기',
       return !['false', 'off', '0', 'no', 'normal', '일반', '해제', '아니오'].includes(value);
     }
 
+    function readMaintenanceBypassFlag() {
+      const source = pageInfoData || {};
+      const bypass = source.maintenanceBypass || (source.maintenance && source.maintenance.bypass) || {};
+      const rawEnabled = bypass.enabled;
+
+      const bypassEnabled = rawEnabled === true || (
+        rawEnabled !== false &&
+        rawEnabled !== undefined &&
+        rawEnabled !== null &&
+        !['false', 'off', '0', 'no', 'normal', '일반', '해제', '아니오'].includes(String(rawEnabled).trim().toLowerCase())
+      );
+
+      if (!bypassEnabled) return false;
+
+      const paramName = String(bypass.param || bypass.parameter || 'preview').trim() || 'preview';
+      const key = String(bypass.key || bypass.value || '').trim();
+      if (!key) return false;
+
+      const currentKey = new URLSearchParams(window.location.search).get(paramName);
+      return currentKey === key;
+    }
+
     function isPageMaintenanceActive() {
+      if (readMaintenanceBypassFlag()) return false;
+
       const maintenanceText = String(getPageInfoOptionalValue('maintenanceText') || '').trim();
       return readMaintenanceFlag() || maintenanceText.length > 0;
     }
