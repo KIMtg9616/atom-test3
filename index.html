@@ -581,6 +581,48 @@
       font-weight: 700;
     }
 
+    .intro-notice {
+      width: min(520px, 86vw);
+      padding: .78rem .95rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(56, 189, 248, .34);
+      background: rgba(8, 17, 33, .58);
+      color: var(--muted);
+      text-align: left;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+    }
+
+    .intro-notice strong {
+      display: block;
+      color: var(--accent2);
+      margin-bottom: .2rem;
+      font-size: .95rem;
+    }
+
+    .intro-notice p {
+      margin: 0;
+      font-size: .95rem;
+    }
+
+    .intro-loader.maintenance .intro-card {
+      border-color: rgba(251, 146, 60, .55);
+      box-shadow: 0 28px 75px rgba(251, 146, 60, .16), 0 28px 70px rgba(0,0,0,.45);
+    }
+
+    .intro-loader.maintenance .intro-title {
+      color: var(--warn);
+    }
+
+    .intro-loader.maintenance .intro-notice {
+      border-color: rgba(251, 146, 60, .62);
+      background: rgba(67, 20, 7, .38);
+    }
+
+    .intro-loader.maintenance .intro-progress,
+    .intro-loader.maintenance .intro-skip {
+      display: none;
+    }
+
     .intro-progress {
       width: min(420px, 80vw);
       height: 10px;
@@ -811,6 +853,10 @@
         <h1 id="introTitle" class="intro-title">원자모형 시뮬레이션</h1>
         <p id="introDesc" class="intro-subtitle">원자핵과 전자의 모형을 불러오는 중입니다.</p>
       </div>
+      <div id="introNoticeBox" class="intro-notice" aria-live="polite">
+        <strong id="introNoticeTitle">공지사항</strong>
+        <p id="introNoticeText">수업용 체험형 시뮬레이션을 준비하고 있습니다.</p>
+      </div>
       <div class="intro-progress" aria-hidden="true"><div class="intro-progress-bar"></div></div>
     </div>
     <button id="introSkipBtn" class="intro-skip" type="button" aria-label="로딩 화면 건너뛰고 원자모형 시뮬레이션으로 이동">건너뛰기</button>
@@ -951,10 +997,25 @@
 
     const introLoader = document.getElementById('introLoader');
     const introSkipBtn = document.getElementById('introSkipBtn');
+    const introTitleEl = document.getElementById('introTitle');
+    const introDescEl = document.getElementById('introDesc');
+    const introNoticeTitleEl = document.getElementById('introNoticeTitle');
+    const introNoticeTextEl = document.getElementById('introNoticeText');
     let introLoaderClosed = false;
+    let introMaintenanceMode = false;
+    let introInfoReady = false;
+    let introCloseTimer = null;
+    if (introSkipBtn) introSkipBtn.disabled = true;
+
+    function scheduleIntroClose() {
+      clearTimeout(introCloseTimer);
+      if (!introMaintenanceMode) {
+        introCloseTimer = window.setTimeout(closeIntroLoader, 3600);
+      }
+    }
 
     function closeIntroLoader() {
-      if (!introLoader || introLoaderClosed) return;
+      if (!introLoader || introLoaderClosed || introMaintenanceMode || !introInfoReady) return;
       introLoaderClosed = true;
       document.body.classList.remove('intro-active');
       introLoader.classList.add('hide');
@@ -978,8 +1039,6 @@
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeIntroLoader();
     });
-
-    window.setTimeout(closeIntroLoader, 3600);
 
     const canvas = document.getElementById('simCanvas');
     const ctx = canvas.getContext('2d');
@@ -1960,6 +2019,48 @@
         zh: '本页面是用于课堂的互动式模拟试用资料。部分物理量为了帮助理解，以相对值表示。',
         ja: 'このページは授業用の体験型シミュレーション試用教材です。一部の物理量は理解を助けるため相対値で表しています。',
         vi: 'Trang này là tài liệu mô phỏng tương tác thử nghiệm dùng cho lớp học. Một số đại lượng vật lí được biểu diễn bằng giá trị tương đối để hỗ trợ việc hiểu bài.'
+      },
+      loadingNoticeTitle: {
+        ko: '공지사항',
+        en: 'Notice',
+        zh: '公告',
+        ja: 'お知らせ',
+        vi: 'Thông báo'
+      },
+      loadingNotice: {
+        ko: '수업용 체험형 시뮬레이션을 준비하고 있습니다.',
+        en: 'Preparing the interactive classroom simulation.',
+        zh: '正在准备课堂互动式模拟。',
+        ja: '授業用の体験型シミュレーションを準備しています。',
+        vi: 'Đang chuẩn bị mô phỏng tương tác dùng cho lớp học.'
+      },
+      maintenanceTitle: {
+        ko: '웹페이지 점검중',
+        en: 'Page under maintenance',
+        zh: '网页维护中',
+        ja: 'ウェブページ点検中',
+        vi: 'Trang đang bảo trì'
+      },
+      maintenanceText: {
+        ko: '',
+        en: '',
+        zh: '',
+        ja: '',
+        vi: ''
+      },
+      maintenanceNotice: {
+        ko: '',
+        en: '',
+        zh: '',
+        ja: '',
+        vi: ''
+      },
+      maintenanceFallbackText: {
+        ko: '현재 웹페이지 수정 작업을 진행 중입니다. 잠시 후 다시 접속해 주세요.',
+        en: 'The page is currently being updated. Please visit again later.',
+        zh: '网页正在更新中。请稍后再访问。',
+        ja: '現在ウェブページを更新しています。しばらくしてから再度アクセスしてください。',
+        vi: 'Trang hiện đang được cập nhật. Vui lòng quay lại sau.'
       }
     };
     let pageInfoData = null;
@@ -2881,6 +2982,73 @@ clearMeasurePoints: '측정 점 지우기',
         : pick(fallback) ?? '';
     }
 
+    function getPageInfoOptionalValue(key) {
+      if (!pageInfoData || !Object.prototype.hasOwnProperty.call(pageInfoData, key)) return '';
+
+      const pick = value => {
+        if (value && typeof value === 'object' && !Array.isArray(value)) {
+          return value[state.lang] ?? value.ko ?? value.en ?? Object.values(value)[0] ?? '';
+        }
+        return value ?? '';
+      };
+
+      return pick(pageInfoData[key]);
+    }
+
+    function readMaintenanceFlag() {
+      const source = pageInfoData || {};
+      const raw = source.maintenanceEnabled ?? source.maintenanceMode ?? (source.maintenance && source.maintenance.enabled);
+
+      if (raw === true) return true;
+      if (raw === false || raw === undefined || raw === null) return false;
+
+      const value = String(raw).trim().toLowerCase();
+      if (!value) return false;
+      return !['false', 'off', '0', 'no', 'normal', '일반', '해제', '아니오'].includes(value);
+    }
+
+    function isPageMaintenanceActive() {
+      const maintenanceText = String(getPageInfoOptionalValue('maintenanceText') || '').trim();
+      return readMaintenanceFlag() || maintenanceText.length > 0;
+    }
+
+    function renderIntroStatus() {
+      if (!introLoader) return;
+
+      introMaintenanceMode = isPageMaintenanceActive();
+      const noticeTitle = getPageInfoValue('loadingNoticeTitle');
+      const loadingNotice = getPageInfoOptionalValue('loadingNotice') || getPageInfoValue('loadingNotice');
+      const maintenanceNotice = getPageInfoOptionalValue('maintenanceNotice') || loadingNotice;
+      const maintenanceText = getPageInfoOptionalValue('maintenanceText') || getPageInfoValue('maintenanceFallbackText');
+
+      if (introMaintenanceMode) {
+        clearTimeout(introCloseTimer);
+        introLoader.classList.add('maintenance');
+        document.body.classList.add('intro-active');
+
+        if (introTitleEl) introTitleEl.textContent = getPageInfoValue('maintenanceTitle');
+        if (introDescEl) introDescEl.textContent = maintenanceText;
+        if (introNoticeTitleEl) introNoticeTitleEl.textContent = noticeTitle;
+        if (introNoticeTextEl) introNoticeTextEl.textContent = maintenanceNotice;
+        if (introSkipBtn) {
+          introSkipBtn.disabled = true;
+          introSkipBtn.setAttribute('aria-hidden', 'true');
+        }
+      } else {
+        introLoader.classList.remove('maintenance');
+
+        if (introTitleEl) introTitleEl.textContent = '원자모형 시뮬레이션';
+        if (introDescEl) introDescEl.textContent = '원자핵과 전자의 모형을 불러오는 중입니다.';
+        if (introNoticeTitleEl) introNoticeTitleEl.textContent = noticeTitle;
+        if (introNoticeTextEl) introNoticeTextEl.textContent = loadingNotice;
+        if (introSkipBtn) {
+          introSkipBtn.disabled = false;
+          introSkipBtn.removeAttribute('aria-hidden');
+        }
+        scheduleIntroClose();
+      }
+    }
+
     async function loadPageInfoData() {
       try {
         const response = await fetch('info.json?cache=' + Date.now(), { cache: 'no-store' });
@@ -2890,7 +3058,9 @@ clearMeasurePoints: '측정 점 지우기',
         pageInfoData = null;
         console.warn('info.json을 불러오지 못해 기본 정보를 표시합니다.', error);
       }
+      introInfoReady = true;
       renderPageInfoMemo();
+      renderIntroStatus();
     }
 
     function renderPageInfoMemo() {
@@ -2986,6 +3156,7 @@ clearMeasurePoints: '측정 점 지우기',
         pageInfoBtn.setAttribute('title', infoTx.buttonTitle);
       }
       renderPageInfoMemo();
+      renderIntroStatus();
     }
 
     function setLanguage(lang) {
