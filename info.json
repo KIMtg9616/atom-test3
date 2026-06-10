@@ -40,5 +40,11 @@
     "zh": "网页正在更新中。请稍后再访问。",
     "ja": "現在ウェブページを更新しています。しばらくしてから再度アクセスしてください。",
     "vi": "Trang hiện đang được cập nhật. Vui lòng quay lại sau."
-  }
+  },
+
+"maintenanceBypass": {
+  "enabled": true,
+  "param": "preview",
+  "key": "atom2026"
+}
 }
