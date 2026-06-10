@@ -1,0 +1,25 @@
+{
+  "version": {
+    "ko": "v2.0 시범판",
+    "en": "v2.0 pilot version",
+    "zh": "v2.0 试用版",
+    "ja": "v2.0 試用版",
+    "vi": "v2.0 bản thử nghiệm"
+  },
+  "updatedAt": "2026-06-09",
+  "updateContent": {
+    "ko": "언어 선택, 현대 원자모형 이중슬릿 전자·빛 실험, 접근성 기능, 페이지 정보 버튼 추가",
+    "en": "Language selection, modern atomic model double-slit experiments with electrons and light, accessibility features, and page information button added",
+    "zh": "新增语言选择、现代原子模型中电子与光的双缝实验、无障碍功能以及页面信息按钮",
+    "ja": "言語選択、現代の原子模型における電子・光の二重スリット実験、アクセシビリティ機能、ページ情報ボタンを追加",
+    "vi": "Đã thêm lựa chọn ngôn ngữ, thí nghiệm hai khe với electron và ánh sáng trong mô hình nguyên tử hiện đại, chức năng hỗ trợ truy cập và nút thông tin trang"
+  },
+  "developer": "Taegyun KIM · ktaeg0616@gmail.com",
+  "notice": {
+    "ko": "본 페이지는 수업용 체험형 시뮬레이션 시범 자료입니다. 일부 물리량은 이해를 돕기 위한 상대값으로 표현됩니다.",
+    "en": "This page is a pilot interactive simulation resource for classroom use. Some physical quantities are shown as relative values to support understanding.",
+    "zh": "本页面是用于课堂的互动式模拟试用资料。部分物理量为了帮助理解，以相对值表示。",
+    "ja": "このページは授業用の体験型シミュレーション試用教材です。一部の物理量は理解を助けるため相対値で表しています。",
+    "vi": "Trang này là tài liệu mô phỏng tương tác thử nghiệm dùng cho lớp học. Một số đại lượng vật lí được biểu diễn bằng giá trị tương đối để hỗ trợ việc hiểu bài."
+  }
+}
