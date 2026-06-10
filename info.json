@@ -3015,13 +3015,13 @@ clearMeasurePoints: '측정 점 지우기',
     function readMaintenanceBypassFlag() {
       const source = pageInfoData || {};
       const bypass = source.maintenanceBypass || (source.maintenance && source.maintenance.bypass) || {};
-      const enabledRaw = bypass.enabled;
+      const rawEnabled = bypass.enabled;
 
-      const bypassEnabled = enabledRaw === true || (
-        enabledRaw !== false &&
-        enabledRaw !== undefined &&
-        enabledRaw !== null &&
-        !['false', 'off', '0', 'no', 'normal', '일반', '해제', '아니오'].includes(String(enabledRaw).trim().toLowerCase())
+      const bypassEnabled = rawEnabled === true || (
+        rawEnabled !== false &&
+        rawEnabled !== undefined &&
+        rawEnabled !== null &&
+        !['false', 'off', '0', 'no', 'normal', '일반', '해제', '아니오'].includes(String(rawEnabled).trim().toLowerCase())
       );
 
       if (!bypassEnabled) return false;
