@@ -3048,11 +3048,10 @@ clearMeasurePoints: '측정 점 지우기',
     }
 
     function isPageMaintenanceActive() {
-      if (readMaintenanceBypassFlag()) return false;
+  if (readMaintenanceBypassFlag()) return false;
 
-      const maintenanceText = String(getPageInfoOptionalValue('maintenanceText') || '').trim();
-      return readMaintenanceFlag() || maintenanceText.length > 0;
-    }
+  return readMaintenanceFlag();
+}
 
     function renderIntroStatus() {
       if (!introLoader) return;
