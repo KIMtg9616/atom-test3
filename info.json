@@ -10,11 +10,11 @@
   },
 
   "loadingNotice": {
-  "ko": "더 나은 원자모형 시뮬레이션을 위해 새롭게 단장 중입니다. <br>💻PC 및 📱태블릿 환경에서 사용하길 권장합니다.<br>⚠️본 사이트는 개인정보를 수집하지 않습니다.",
-  "en": "We are refreshing the atomic model simulation to make it better.",
-  "zh": "为了提供更好的原子模型模拟，页面正在进行全新改版。",
-  "ja": "よりよい原子模型シミュレーションにするため、現在リニューアル中です。",
-  "vi": "Chúng tôi đang làm mới mô phỏng mô hình nguyên tử để mang lại trải nghiệm tốt hơn."
+  "ko": "더 나은 원자모형 시뮬레이션을 위해 새롭게 단장 중입니다.<br>💻PC 및 📱태블릿 환경에서 사용하길 권장합니다.<br>⚠️본 사이트는 개인정보를 수집하지 않습니다.",
+  "en": "We are refreshing the atomic model simulation to make it better.<br>💻We recommend using it on a PC or 📱tablet.<br>⚠️This site does not collect personal information.",
+  "zh": "为了提供更好的原子模型模拟，页面正在进行全新改版。<br>💻建议在电脑或📱平板设备上使用。<br>⚠️本网站不收集个人信息。",
+  "ja": "よりよい原子模型シミュレーションにするため、現在リニューアル中です。<br>💻PCまたは📱タブレット環境での利用を推奨します。<br>⚠️本サイトは個人情報を収集しません。",
+  "vi": "Chúng tôi đang làm mới mô phỏng mô hình nguyên tử để mang lại trải nghiệm tốt hơn.<br>💻Khuyến nghị sử dụng trên máy tính hoặc 📱máy tính bảng.<br>⚠️Trang web này không thu thập thông tin cá nhân."
 },
 
   "maintenanceEnabled": true,
