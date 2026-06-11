@@ -2967,6 +2967,11 @@ clearMeasurePoints: '측정 점 지우기',
         "'": '&#039;'
       }[ch]));
     }
+    function formatNoticeHTML(value) {
+  return escapeHTML(value)
+    .replace(/&lt;br\s*\/?&gt;/gi, '<br>')
+    .replace(/\r?\n/g, '<br>');
+}
 
     function getPageInfoValue(key) {
       const current = pageInfoData && Object.prototype.hasOwnProperty.call(pageInfoData, key)
@@ -3058,7 +3063,7 @@ clearMeasurePoints: '측정 점 지우기',
         if (introTitleEl) introTitleEl.textContent = getPageInfoValue('maintenanceTitle');
         if (introDescEl) introDescEl.textContent = maintenanceText;
         if (introNoticeTitleEl) introNoticeTitleEl.textContent = noticeTitle;
-        if (introNoticeTextEl) introNoticeTextEl.textContent = maintenanceNotice;
+        if (introNoticeTextEl) introNoticeTextEl.innerHTML = formatNoticeHTML(maintenanceNotice);
         if (introSkipBtn) {
           introSkipBtn.disabled = true;
           introSkipBtn.setAttribute('aria-hidden', 'true');
@@ -3069,7 +3074,7 @@ clearMeasurePoints: '측정 점 지우기',
         if (introTitleEl) introTitleEl.textContent = '원자모형 시뮬레이션';
         if (introDescEl) introDescEl.textContent = '원자핵과 전자의 모형을 불러오는 중입니다.';
         if (introNoticeTitleEl) introNoticeTitleEl.textContent = noticeTitle;
-        if (introNoticeTextEl) introNoticeTextEl.textContent = loadingNotice;
+        if (introNoticeTextEl) introNoticeTextEl.innerHTML = formatNoticeHTML(loadingNotice);
         if (introSkipBtn) {
           introSkipBtn.disabled = false;
           introSkipBtn.removeAttribute('aria-hidden');
