@@ -4198,7 +4198,7 @@ clearMeasurePoints: '측정 점 지우기',
 
       // 검출 스크린과 빛 간섭무늬
       roundRect(screenX, topY, 34, bottomY - topY, 8, `rgba(${rgb},.11)`, lightColor);
-      text(tr('검출 스크린'), screenX + 17, topY - 30, 18, lightColor);
+      text(dsText('detectionScreen'), screenX + 17, topY - 30, 18, lightColor);
       for (let y = topY + 8; y < bottomY - 8; y += 5) {
         const a = doubleSlitLightIntensity(y);
         ctx.fillStyle = `rgba(${rgb},${0.08 + a * 0.70})`;
