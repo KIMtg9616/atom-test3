@@ -28,7 +28,7 @@
   },
 
   "maintenanceBypass": {
-    "enabled": true,
+    "enabled": false,
     "param": "preview",
     "key": "atom2026"
   }
