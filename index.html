@@ -299,6 +299,13 @@
       padding: 1rem;
     }
 
+    .timeline-science-note {
+      margin: .8rem .1rem 0;
+      color: var(--muted);
+      font-size: .92rem;
+      line-height: 1.55;
+    }
+
     .timeline-grid {
       margin-top: .85rem;
       display: grid;
@@ -581,6 +588,14 @@
       font-weight: 700;
     }
 
+    .intro-model-note {
+      width: min(560px, 88vw);
+      margin: .35rem auto 0;
+      color: #94a3b8;
+      font-size: .82rem;
+      line-height: 1.45;
+    }
+
     .intro-notice {
       width: min(520px, 86vw);
       padding: .78rem .95rem;
@@ -860,6 +875,7 @@
       <div>
         <h1 id="introTitle" class="intro-title">원자모형 시뮬레이션</h1>
         <p id="introDesc" class="intro-subtitle">원자핵과 전자의 모형을 불러오는 중입니다.</p>
+        <p id="introModelIconNote" class="intro-model-note">※ 이 그림은 원자를 상징하는 아이콘이며, 실제 원자의 구조나 전자 경로를 나타내지 않습니다.</p>
       </div>
       <div id="introNoticeBox" class="intro-notice" aria-live="polite">
         <strong id="introNoticeTitle">공지사항</strong>
@@ -886,7 +902,7 @@
     <dl>
       <dt>웹 버전</dt><dd>v2.0 시범판</dd>
       <dt>최근 업데이트</dt><dd>2026-06-09</dd>
-      <dt>업데이트 내용</dt><dd>언어 선택, 현대 원자모형 이중슬릿 전자·빛 실험, 접근성 기능, 페이지 정보 버튼 추가</dd>
+      <dt>업데이트 내용</dt><dd>언어 선택, 현대 원자모형 이중 슬릿 전자·빛 실험, 접근성 기능, 페이지 정보 버튼 추가</dd>
       <dt>개발자 정보</dt><dd>Taegyun KIM · ktaeg0616@gmail.com</dd>
     </dl>
     <div class="notice"><strong>공지사항</strong><br>본 페이지는 수업용 체험형 시뮬레이션 시범 자료입니다. 일부 물리량은 이해를 돕기 위한 상대값으로 표현됩니다.</div>
@@ -937,6 +953,7 @@
     <section class="timeline" aria-labelledby="timelineTitle">
       <h2 id="timelineTitle">2단계: 원자모형의 변화 한눈에 보기</h2>
       <div class="timeline-grid" id="timelineGrid"></div>
+      <p id="timelineScienceNote" class="timeline-science-note">※ 새 모형이 등장해도 이전 모형은 특정 현상을 단순하게 설명하는 데 계속 쓰일 수 있습니다. 과학의 변화는 항상 한 줄로만 진행되지는 않습니다.</p>
     </section>
 
     <section id="simulation" class="layout" aria-label="원자모형 시뮬레이션 영역">
@@ -1185,20 +1202,20 @@
         title: '드브로이의 물질파 관점',
         short: '전자에서 입자적 성질과 파동적 성질이 나타나며, 보어의 허용 궤도를 정상파 조건으로 해석한 관점입니다.',
         easy: '드브로이는 전자에서도 파동의 성질이 나타난다고 제안했습니다. 전자의 물질파가 원 둘레에서 끊기지 않고 이어지는 경우를 보어의 허용 궤도와 연결해 설명할 수 있습니다.',
-        deep: '드브로이의 물질파 개념은 보어의 허용 궤도를 정상파 조건으로 해석하는 데 도움을 주었습니다. 원둘레가 전자 파장의 정수배일 때 파동이 자기 자신과 위상이 맞아 정상파 조건을 만족합니다.',
+        deep: '드브로이의 물질파 개념은 보어의 허용 궤도를 정상파 조건으로 해석하는 데 도움을 주었습니다. 원 둘레가 전자 파장의 정수배일 때 파동이 자기 자신과 위상이 맞아 정상파 조건을 만족합니다.',
         question: '전자의 물질파가 원 둘레에서 자기 자신과 이어지려면 어떤 조건이 필요할까요?',
         limit: '이 화면은 보어 궤도를 물질파의 정상파로 해석한 중간 단계의 관점입니다. 현대 양자역학의 오비탈과 확률 분포를 완전히 나타내지는 못합니다.',
-        desc: '원형 궤도 위에 물결 모양 파동이 그려집니다. 파장이 원둘레에 맞으면 파동이 매끄럽게 이어지고, 맞지 않으면 끊겨 보입니다.',
+        desc: '원형 궤도 위에 물결 모양 파동이 그려집니다. 파장이 원 둘레에 맞으면 파동이 매끄럽게 이어지고, 맞지 않으면 끊겨 보입니다.',
         nature: '같은 보어 궤도도 입자 관점과 파동 관점으로 다르게 설명할 수 있습니다. 하나의 현상을 설명하는 모형은 여러 가지일 수 있습니다.'
       },
       modern: {
         title: '현대 원자모형',
         short: '전자를 정확한 궤도 대신 파동함수, 오비탈, 위치 확률분포로 설명합니다.',
         easy: '현대 원자모형에서는 전자가 딱 정해진 길을 돈다고 말하지 않습니다. 전자가 어디에서 발견될 가능성이 큰지를 구름처럼 나타냅니다.',
-        deep: '현대 원자모형은 전자의 상태를 파동함수로 설명합니다. 오비탈은 원자에 대한 일전자 파동함수이며, 파동함수의 절댓값 제곱은 위치 확률밀도와 관련됩니다. 동일한 상태로 준비해 위치를 측정하면 전자는 한 위치에서 검출되고, 반복 결과는 확률분포를 이룹니다.',
+        deep: '현대 원자모형은 전자의 상태를 파동함수로 설명합니다. 오비탈은 한 전자의 상태를 나타내는 파동함수이며, 다전자 원자에서는 이를 근사적으로 사용합니다. 파동함수의 절댓값 제곱은 위치 확률밀도와 관련됩니다. 동일한 상태로 준비해 위치를 측정하면 전자는 한 위치에서 검출되고, 반복 결과는 확률분포를 이룹니다.',
         question: '전자 한 개는 측정할 때 한 위치에서 검출됩니다. 그렇다면 측정하기 전에 어느 위치에서 검출될지를 정확히 예측할 수 있을까요?',
         limit: '전자구름 그림은 확률 분포를 쉽게 보여 주는 도구입니다. 실제 전자가 흐릿한 안개라는 뜻은 아닙니다.',
-        desc: '밝은 전자구름은 동일한 상태로 준비한 전자를 측정했을 때 검출될 가능성이 큰 곳을 뜻합니다. 반복 측정의 검출점이 쌓이면 확률분포와 비슷한 모양이 나타납니다.',
+        desc: '밝은 전자구름은 동일한 상태로 준비한 전자를 측정했을 때 검출될 가능성이 큰 곳을 뜻합니다. 반복 측정의 검출점이 쌓이면 확률분포와 비슷한 모양이 나타납니다. 화면의 모양과 밝기는 정성적 모형이며 정확한 계산값이나 실제 크기 비율이 아닙니다.',
         nature: '모형은 실제의 축소판이 아니라 설명 도구입니다. 전자구름은 보이지 않는 대상을 수학, 증거, 추론으로 이해하려는 방법입니다.'
       }
     };
@@ -1270,10 +1287,10 @@
             "title": "Modern Atomic Model",
             "short": "Electrons are described with wave functions, orbitals, and position probability distributions rather than exact paths.",
             "easy": "In the modern atomic model, electrons are not said to move along one exact path. Instead, we show where an electron is likely to be found as a cloud.",
-            "deep": "The modern atomic model describes an electron state with a wave function. An orbital is a one-electron wave function for an atom, and the squared magnitude of the wave function is related to position probability density. When identically prepared states are measured, each electron is detected at one position and repeated results form a probability distribution.",
+            "deep": "The modern atomic model describes an electron state with a wave function. An orbital is a wave function describing one electron, and it is used approximately in many-electron atoms. The squared magnitude of the wave function is related to position probability density. When identically prepared states are measured, each electron is detected at one position and repeated results form a probability distribution.",
             "question": "One electron is detected at one position during a measurement. Can we predict that position exactly before the measurement?",
             "limit": "The electron cloud picture is a tool for showing probability. It does not mean the electron is literally a foggy mist.",
-            "desc": "Brighter cloud regions mean a higher detection probability for identically prepared electron states. Repeated detections build up a distribution resembling the probability cloud.",
+            "desc": "Brighter cloud regions mean a higher detection probability for identically prepared electron states. Repeated detections build up a distribution resembling the probability cloud. The displayed shape and brightness are qualitative, not exact calculation results or a true size scale.",
             "nature": "A model is not a small copy of reality; it is an explanatory tool. The electron cloud helps us understand an invisible object through mathematics, evidence, and reasoning."
       }
 },
@@ -1332,10 +1349,10 @@
             "title": "现代原子模型",
             "short": "不用精确路径，而用波函数、原子轨道和位置概率分布描述电子。",
             "easy": "现代原子模型不说电子沿着一条确定路径运动，而是用云状图表示电子更可能被发现的位置。",
-            "deep": "现代原子模型用波函数描述电子状态。原子轨道是原子的单电子波函数，波函数绝对值的平方与位置概率密度有关。对相同制备的状态进行位置测量时，每个电子在一个位置被探测到，重复结果形成概率分布。",
+            "deep": "现代原子模型用波函数描述电子状态。原子轨道是描述一个电子状态的波函数，在多电子原子中以近似方式使用。波函数绝对值的平方与位置概率密度有关。对相同制备的状态进行位置测量时，每个电子在一个位置被探测到，重复结果形成概率分布。",
             "question": "单个电子在测量时会在一个位置被探测到。那么在测量前，能否准确预测它会在哪里被探测到？",
             "limit": "电子云图是表示概率分布的工具，并不表示电子真的像雾一样。",
-            "desc": "云越亮，表示对相同制备的电子状态进行测量时在该处探测到电子的概率越大。重复探测点会逐渐形成类似概率云的分布。",
+            "desc": "云越亮，表示对相同制备的电子状态进行测量时在该处探测到电子的概率越大。重复探测点会逐渐形成类似概率云的分布。画面的形状和亮度是定性模型，并非精确计算结果或真实大小比例。",
             "nature": "模型不是现实的缩小复制品，而是解释工具。电子云帮助我们用数学、证据和推理理解看不见的对象。"
       }
 },
@@ -1394,10 +1411,10 @@
             "title": "現代の原子模型",
             "short": "電子を正確な経路ではなく、波動関数・オービタル・位置の確率分布で説明します。",
             "easy": "現代の原子模型では、電子が決まった道を回るとは言いません。電子がどこで見つかりやすいかを雲のように表します。",
-            "deep": "現代の原子模型は電子の状態を波動関数で説明します。オービタルは原子に対する一電子波動関数であり、その絶対値の二乗は位置の確率密度に関係します。同じ状態に準備して位置を測定すると、各電子は一つの位置で検出され、繰り返し結果が確率分布を作ります。",
+            "deep": "現代の原子模型は電子の状態を波動関数で説明します。オービタルは一つの電子の状態を表す波動関数で、多電子原子では近似的に用いられます。その絶対値の二乗は位置の確率密度に関係します。同じ状態に準備して位置を測定すると、各電子は一つの位置で検出され、繰り返し結果が確率分布を作ります。",
             "question": "一個の電子は測定すると一つの位置で検出されます。では、測定前にその検出位置を正確に予測できるでしょうか。",
             "limit": "電子雲の図は確率分布を分かりやすく示す道具です。電子が本当にぼんやりした霧という意味ではありません。",
-            "desc": "電子雲が明るい場所ほど、同じ状態に準備した電子を測定したときに検出される確率が高いことを表します。繰り返し検出点がたまると、確率雲に似た分布が現れます。",
+            "desc": "電子雲が明るい場所ほど、同じ状態に準備した電子を測定したときに検出される確率が高いことを表します。繰り返し検出点がたまると、確率雲に似た分布が現れます。画面の形と明るさは定性的な模型で、正確な計算値や実際の大きさの比ではありません。",
             "nature": "模型は実物の縮小版ではなく説明の道具です。電子雲は、見えない対象を数学・証拠・推論で理解する方法です。"
       }
 },
@@ -1456,10 +1473,10 @@
             "title": "Mô hình nguyên tử hiện đại",
             "short": "Electron được mô tả bằng hàm sóng, orbital và phân bố xác suất vị trí thay vì một đường đi chính xác.",
             "easy": "Trong mô hình hiện đại, electron không được nói là đi theo một đường chính xác. Ta biểu diễn nơi có khả năng tìm thấy electron bằng một đám mây.",
-            "deep": "Mô hình hiện đại mô tả trạng thái electron bằng hàm sóng. Orbital là hàm sóng một electron của nguyên tử, và bình phương độ lớn của hàm sóng liên hệ với mật độ xác suất vị trí. Khi đo các trạng thái được chuẩn bị giống nhau, mỗi electron được phát hiện tại một vị trí và các kết quả lặp lại tạo thành phân bố xác suất.",
+            "deep": "Mô hình hiện đại mô tả trạng thái electron bằng hàm sóng. Orbital là hàm sóng mô tả trạng thái của một electron và được dùng gần đúng trong nguyên tử nhiều electron. Bình phương độ lớn của hàm sóng liên hệ với mật độ xác suất vị trí. Khi đo các trạng thái được chuẩn bị giống nhau, mỗi electron được phát hiện tại một vị trí và các kết quả lặp lại tạo thành phân bố xác suất.",
             "question": "Một electron được phát hiện tại một vị trí khi đo. Ta có thể dự đoán chính xác vị trí đó trước phép đo hay không?",
             "limit": "Hình đám mây electron là công cụ biểu diễn xác suất. Nó không có nghĩa electron thật sự là một làn sương mờ.",
-            "desc": "Vùng đám mây sáng hơn nghĩa là xác suất phát hiện electron cao hơn khi đo các trạng thái được chuẩn bị giống nhau. Các điểm phát hiện lặp lại tích tụ thành phân bố giống đám mây xác suất.",
+            "desc": "Vùng đám mây sáng hơn nghĩa là xác suất phát hiện electron cao hơn khi đo các trạng thái được chuẩn bị giống nhau. Các điểm phát hiện lặp lại tích tụ thành phân bố giống đám mây xác suất. Hình dạng và độ sáng trên màn hình là mô hình định tính, không phải kết quả tính toán chính xác hay tỉ lệ kích thước thật.",
             "nature": "Mô hình không phải là bản sao thu nhỏ của thực tại; nó là công cụ giải thích. Đám mây electron giúp hiểu một đối tượng vô hình bằng toán học, bằng chứng và suy luận."
       }
 }
@@ -1936,7 +1953,7 @@
         updatedLabel: '최근 업데이트',
         updatedDate: '2026-06-09',
         updateContentLabel: '업데이트 내용',
-        updateContent: '언어 선택, 현대 원자모형 이중슬릿 전자·빛 실험, 접근성 기능, 페이지 정보 버튼 추가',
+        updateContent: '언어 선택, 현대 원자모형 이중 슬릿 전자·빛 실험, 접근성 기능, 페이지 정보 버튼 추가',
         developerLabel: '개발자 정보',
         noticeLabel: '공지사항',
         notice: '본 페이지는 수업용 체험형 시뮬레이션 시범 자료입니다. 일부 물리량은 이해를 돕기 위한 상대값으로 표현됩니다.'
@@ -2014,7 +2031,7 @@
       },
       updatedAt: '2026-06-09',
       updateContent: {
-        ko: '언어 선택, 현대 원자모형 이중슬릿 전자·빛 실험, 접근성 기능, 페이지 정보 버튼 추가',
+        ko: '언어 선택, 현대 원자모형 이중 슬릿 전자·빛 실험, 접근성 기능, 페이지 정보 버튼 추가',
         en: 'Language selection, modern atomic model double-slit experiments with electrons and light, accessibility features, and page information button added',
         zh: '新增语言选择、现代原子模型中电子与光的双缝实验、无障碍功能以及页面信息按钮',
         ja: '言語選択、現代の原子模型における電子・光の二重スリット実験、アクセシビリティ機能、ページ情報ボタンを追加',
@@ -2188,8 +2205,8 @@
             "현대 원자모형: 밝은 곳은 전자가 발견될 가능성이 큰 곳입니다. 측정을 반복하면 점들이 전자구름 모양으로 쌓입니다.": "Modern atomic model: brighter regions mean a higher chance of finding the electron. Repeated measurements build up cloud-like dots.",
             "현대 원자모형 체험 선택": "Modern atomic model activity selection",
             "보기: 오비탈과 측정": "View: orbitals and measurement",
-            "실험 보기: 이중슬릿 실험": "Experiment: double-slit experiment",
-            "이중슬릿 실험 조작": "Double-slit experiment controls",
+            "실험 보기: 이중 슬릿 실험": "Experiment: double-slit experiment",
+            "이중 슬릿 실험 조작": "Double-slit experiment controls",
             "슬릿 간격": "Slit spacing",
             "간섭 선명도": "Interference clarity",
             "전자 1개 보내기": "Send 1 electron",
@@ -2198,11 +2215,11 @@
             "경로 관찰 켜기": "Turn on path observation",
             "경로 관찰 끄기": "Turn off path observation",
             "스크린 지우기": "Clear screen",
-            "현대 원자모형: 오비탈·측정과 이중슬릿 실험을 전환하여 탐구할 수 있습니다.": "Modern atomic model: switch between orbitals, measurement, and the double-slit experiment.",
+            "현대 원자모형: 오비탈·측정과 이중 슬릿 실험을 전환하여 탐구할 수 있습니다.": "Modern atomic model: switch between orbitals, measurement, and the double-slit experiment.",
             "현대 원자모형: 전자를 하나씩 보내도 스크린에는 간섭무늬가 누적됩니다.": "Modern atomic model: even when electrons are sent one by one, an interference pattern builds up on the screen.",
-            "현대: 이중슬릿 실험": "Modern: double-slit experiment",
+            "현대: 이중 슬릿 실험": "Modern: double-slit experiment",
             "전자 발사기": "electron source",
-            "이중슬릿": "double slit",
+            "이중 슬릿": "double slit",
             "검출 스크린": "detection screen",
             "파동처럼 두 슬릿을 지나감": "passes through both slits like a wave",
             "경로를 관찰하면 간섭무늬가 약해집니다.": "If the path is observed, the interference pattern becomes weaker.",
@@ -2212,8 +2229,8 @@
             "물결무늬 확률": "wave-like probability",
             "현대 원자모형 체험 선택": "现代原子模型体验选择",
             "보기: 오비탈과 측정": "查看：轨道与测量",
-            "실험 보기: 이중슬릿 실험": "实验：双缝实验",
-            "이중슬릿 실험 조작": "双缝实验控制",
+            "실험 보기: 이중 슬릿 실험": "实验：双缝实验",
+            "이중 슬릿 실험 조작": "双缝实验控制",
             "슬릿 간격": "缝间距",
             "간섭 선명도": "干涉清晰度",
             "전자 1개 보내기": "发射1个电子",
@@ -2222,11 +2239,11 @@
             "경로 관찰 켜기": "开启路径观测",
             "경로 관찰 끄기": "关闭路径观测",
             "스크린 지우기": "清除屏幕",
-            "현대 원자모형: 오비탈·측정과 이중슬릿 실험을 전환하여 탐구할 수 있습니다.": "现代原子模型：可以在轨道、测量和双缝实验之间切换探究。",
+            "현대 원자모형: 오비탈·측정과 이중 슬릿 실험을 전환하여 탐구할 수 있습니다.": "现代原子模型：可以在轨道、测量和双缝实验之间切换探究。",
             "현대 원자모형: 전자를 하나씩 보내도 스크린에는 간섭무늬가 누적됩니다.": "现代原子模型：即使一个个发射电子，屏幕上也会逐渐形成干涉条纹。",
-            "현대: 이중슬릿 실험": "现代：双缝实验",
+            "현대: 이중 슬릿 실험": "现代：双缝实验",
             "전자 발사기": "电子发射器",
-            "이중슬릿": "双缝",
+            "이중 슬릿": "双缝",
             "검출 스크린": "探测屏",
             "파동처럼 두 슬릿을 지나감": "像波一样通过两条缝",
             "경로를 관찰하면 간섭무늬가 약해집니다.": "如果观测路径，干涉条纹会变弱。",
@@ -2236,8 +2253,8 @@
             "물결무늬 확률": "波状概率",
             "현대 원자모형 체험 선택": "現代原子模型の体験選択",
             "보기: 오비탈과 측정": "表示：オービタルと測定",
-            "실험 보기: 이중슬릿 실험": "実験：二重スリット実験",
-            "이중슬릿 실험 조작": "二重スリット実験の操作",
+            "실험 보기: 이중 슬릿 실험": "実験：二重スリット実験",
+            "이중 슬릿 실험 조작": "二重スリット実験の操作",
             "슬릿 간격": "スリット間隔",
             "간섭 선명도": "干渉のはっきり度",
             "전자 1개 보내기": "電子を1個送る",
@@ -2246,11 +2263,11 @@
             "경로 관찰 켜기": "経路観察をオン",
             "경로 관찰 끄기": "経路観察をオフ",
             "스크린 지우기": "スクリーンを消す",
-            "현대 원자모형: 오비탈·측정과 이중슬릿 실험을 전환하여 탐구할 수 있습니다.": "現代原子模型：オービタル・測定と二重スリット実験を切り替えて探究できます。",
+            "현대 원자모형: 오비탈·측정과 이중 슬릿 실험을 전환하여 탐구할 수 있습니다.": "現代原子模型：オービタル・測定と二重スリット実験を切り替えて探究できます。",
             "현대 원자모형: 전자를 하나씩 보내도 스크린에는 간섭무늬가 누적됩니다.": "現代原子模型：電子を1個ずつ送っても、スクリーンには干渉模様が積み重なります。",
-            "현대: 이중슬릿 실험": "現代：二重スリット実験",
+            "현대: 이중 슬릿 실험": "現代：二重スリット実験",
             "전자 발사기": "電子発射器",
-            "이중슬릿": "二重スリット",
+            "이중 슬릿": "二重スリット",
             "검출 스크린": "検出スクリーン",
             "파동처럼 두 슬릿을 지나감": "波のように二つのスリットを通る",
             "경로를 관찰하면 간섭무늬가 약해집니다.": "経路を観察すると、干渉模様は弱くなります。",
@@ -2260,8 +2277,8 @@
             "물결무늬 확률": "波のような確率",
             "현대 원자모형 체험 선택": "Chọn hoạt động mô hình nguyên tử hiện đại",
             "보기: 오비탈과 측정": "Xem: orbital và phép đo",
-            "실험 보기: 이중슬릿 실험": "Thí nghiệm: hai khe",
-            "이중슬릿 실험 조작": "Điều khiển thí nghiệm hai khe",
+            "실험 보기: 이중 슬릿 실험": "Thí nghiệm: hai khe",
+            "이중 슬릿 실험 조작": "Điều khiển thí nghiệm hai khe",
             "슬릿 간격": "Khoảng cách hai khe",
             "간섭 선명도": "Độ rõ của giao thoa",
             "전자 1개 보내기": "Gửi 1 electron",
@@ -2270,11 +2287,11 @@
             "경로 관찰 켜기": "Bật quan sát đường đi",
             "경로 관찰 끄기": "Tắt quan sát đường đi",
             "스크린 지우기": "Xóa màn hình",
-            "현대 원자모형: 오비탈·측정과 이중슬릿 실험을 전환하여 탐구할 수 있습니다.": "Mô hình hiện đại: có thể chuyển giữa orbital, phép đo và thí nghiệm hai khe.",
+            "현대 원자모형: 오비탈·측정과 이중 슬릿 실험을 전환하여 탐구할 수 있습니다.": "Mô hình hiện đại: có thể chuyển giữa orbital, phép đo và thí nghiệm hai khe.",
             "현대 원자모형: 전자를 하나씩 보내도 스크린에는 간섭무늬가 누적됩니다.": "Mô hình hiện đại: dù gửi electron từng hạt một, vân giao thoa vẫn tích lũy trên màn hình.",
-            "현대: 이중슬릿 실험": "Hiện đại: thí nghiệm hai khe",
+            "현대: 이중 슬릿 실험": "Hiện đại: thí nghiệm hai khe",
             "전자 발사기": "nguồn phát electron",
-            "이중슬릿": "hai khe",
+            "이중 슬릿": "hai khe",
             "검출 스크린": "màn phát hiện",
             "파동처럼 두 슬릿을 지나감": "đi qua hai khe như sóng",
             "경로를 관찰하면 간섭무늬가 약해집니다.": "Nếu quan sát đường đi, vân giao thoa sẽ yếu đi.",
@@ -2724,7 +2741,7 @@
       "ko": {
             "elementInfo": "{name}: 모형용 상대 크기 {radius} · 상대 질량 {mass}",
             "cathodeObservation": "관찰: {status}. 전기력과 자기력의 방향은 전자의 전하·속도와 장의 방향에 따라 달라집니다.",
-            "currentPath": "화면상 편향: {dirY} · 원근 표현: {dirZ}",
+            "currentPath": "화면상 편향: {dirY} · 자기장 방향: {fieldDir}",
             "alphaCounts": "거의 직진 {straight}  ·  휘어짐 {deflected}  ·  되돌아감 {bounced}",
             "bohrEnergy": "현재 전자는 n={n} 에너지 준위에 있습니다. 준위 차이에 맞는 에너지의 빛을 흡수하거나 방출할 때 전이합니다.",
             "deBroglieFit": "{n}개의 파장이 원 둘레에 딱 맞음",
@@ -2734,7 +2751,7 @@
       "en": {
             "elementInfo": "{name}: model relative size {radius} · relative mass {mass}",
             "cathodeObservation": "Observation: {status}. Electric and magnetic force directions depend on the electron charge, velocity, and field directions.",
-            "currentPath": "On-screen deflection: {dirY} · perspective cue: {dirZ}",
+            "currentPath": "On-screen deflection: {dirY} · magnetic-field direction: {fieldDir}",
             "alphaCounts": "Almost straight {straight}  ·  Deflected {deflected}  ·  Bounced back {bounced}",
             "bohrEnergy": "The electron is currently at energy level n={n}. A transition occurs when it absorbs or emits light whose energy matches the level difference.",
             "deBroglieFit": "{n} wavelengths fit exactly around the orbit",
@@ -2744,7 +2761,7 @@
       "zh": {
             "elementInfo": "{name}：模型相对大小 {radius} · 相对质量 {mass}",
             "cathodeObservation": "观察：{status}。电力和磁力的方向取决于电子的电荷、速度以及场的方向。",
-            "currentPath": "屏幕偏转：{dirY} · 透视表示：{dirZ}",
+            "currentPath": "屏幕偏转：{dirY} · 磁场方向：{fieldDir}",
             "alphaCounts": "几乎直进 {straight}  ·  偏转 {deflected}  ·  反弹 {bounced}",
             "bohrEnergy": "当前电子位于 n={n} 能级。吸收或放出与能级差相符的光时会发生跃迁。",
             "deBroglieFit": "{n} 个波长正好绕满轨道",
@@ -2754,7 +2771,7 @@
       "ja": {
             "elementInfo": "{name}：模型用の相対的な大きさ {radius}・相対質量 {mass}",
             "cathodeObservation": "観察：{status}。電気力と磁気力の向きは、電子の電荷・速度と場の向きによって決まります。",
-            "currentPath": "画面上の偏向：{dirY}・奥行き表現：{dirZ}",
+            "currentPath": "画面上の偏向：{dirY}・磁場の向き：{fieldDir}",
             "alphaCounts": "ほぼ直進 {straight}  ·  曲がり {deflected}  ·  跳ね返り {bounced}",
             "bohrEnergy": "現在、電子は n={n} のエネルギー準位にあります。準位差に合うエネルギーの光を吸収または放出すると遷移します。",
             "deBroglieFit": "{n}個の波長が円周にぴったり合う",
@@ -2764,14 +2781,92 @@
       "vi": {
             "elementInfo": "{name}: kích thước tương đối của mô hình {radius} · khối lượng tương đối {mass}",
             "cathodeObservation": "Quan sát: {status}. Hướng của lực điện và lực từ phụ thuộc vào điện tích, vận tốc electron và hướng của các trường.",
-            "currentPath": "Độ lệch trên màn hình: {dirY} · biểu diễn phối cảnh: {dirZ}",
+            "currentPath": "Độ lệch trên màn hình: {dirY} · hướng từ trường: {fieldDir}",
             "alphaCounts": "Gần như đi thẳng {straight}  ·  Bị lệch {deflected}  ·  Bật ngược {bounced}",
             "bohrEnergy": "Electron hiện ở mức năng lượng n={n}. Sự chuyển mức xảy ra khi nó hấp thụ hoặc phát ra ánh sáng có năng lượng phù hợp với độ chênh mức.",
             "deBroglieFit": "{n} bước sóng khớp đúng quanh quỹ đạo",
             "modernCount": "Độ sáng hiển thị đám mây electron {brightness}% · số phép đo với trạng thái chuẩn bị giống nhau {count}",
             "doubleSlitStatus": "Số điểm phát hiện {count} · thông tin đường đi: {mode}"
       }
-};
+ };
+
+    const scienceText = {
+      ko: {
+        introIconNote: '※ 이 그림은 원자를 상징하는 아이콘이며, 실제 원자의 구조나 전자 경로를 나타내지 않습니다.',
+        timelineNote: '※ 새 모형이 등장해도 이전 모형은 특정 현상을 단순하게 설명하는 데 계속 쓰일 수 있습니다. 과학의 변화는 항상 한 줄로만 진행되지는 않습니다.',
+        magneticOut: '화면 밖 방향(⊙)',
+        magneticIn: '화면 안 방향(⊗)',
+        magneticNone: '자기장 없음',
+        rutherfordNote: '※ 금박 속 원자핵 하나를 크게 확대한 정성적 모형입니다. 실제 크기·거리 비율이나 산란각을 정량 계산한 결과가 아닙니다.',
+        bohrLevelScaleNote: '※ 수소의 에너지 준위 간격은 같지 않습니다. 그림은 이해를 위한 정성적 표현입니다.',
+        bohrOrbitScaleNote: '※ 궤도 반지름과 간격은 설명을 위한 모형이며 실제 비율이 아닙니다.',
+        bohrUvNote: 'n=1↔2 전이는 자외선입니다. 보라색은 화면에서 구분하기 위한 모형색입니다.',
+        bohrRedNote: 'n=2↔3 전이는 약 656 nm의 붉은빛과 관련됩니다.',
+        deBrogliePathNote: '※ 물결선은 전자의 실제 이동 경로가 아니라 물질파의 진폭과 위상을 나타낸 모형입니다.',
+        orbitalQualitativeNote: '※ 전자구름의 모양과 밝기는 확률 개념을 위한 정성적 모형이며 정확한 계산값이나 실제 크기 비율이 아닙니다.'
+      },
+      en: {
+        introIconNote: '※ This is a symbolic atom icon, not the actual structure of an atom or an electron path.',
+        timelineNote: '※ Earlier models can still be useful for explaining particular phenomena simply. Scientific change does not always follow one straight line.',
+        magneticOut: 'out of the screen (⊙)',
+        magneticIn: 'into the screen (⊗)',
+        magneticNone: 'no magnetic field',
+        rutherfordNote: '※ This is a qualitative enlargement of one nucleus in the foil. Sizes, distances, and scattering angles are not calculated to scale.',
+        bohrLevelScaleNote: '※ Hydrogen energy levels are not equally spaced. This diagram is qualitative.',
+        bohrOrbitScaleNote: '※ Orbit radii and spacing are explanatory model features, not a true scale.',
+        bohrUvNote: 'The n=1↔2 transition is ultraviolet. Purple is only a visible model color.',
+        bohrRedNote: 'The n=2↔3 transition is associated with red light near 656 nm.',
+        deBrogliePathNote: '※ The wavy line is not the electron’s actual travel path; it models matter-wave amplitude and phase.',
+        orbitalQualitativeNote: '※ Cloud shape and brightness are qualitative probability models, not exact calculations or a true size scale.'
+      },
+      zh: {
+        introIconNote: '※ 该图只是原子的象征图标，并不表示原子的真实结构或电子路径。',
+        timelineNote: '※ 新模型出现后，旧模型仍可用于简化说明某些现象。科学的发展并不总是沿一条直线进行。',
+        magneticOut: '垂直屏幕向外（⊙）',
+        magneticIn: '垂直屏幕向内（⊗）',
+        magneticNone: '无磁场',
+        rutherfordNote: '※ 这是把金箔中一个原子核放大的定性模型，大小、距离和散射角均非按比例定量计算。',
+        bohrLevelScaleNote: '※ 氢原子的能级间隔并不相等，本图是帮助理解的定性表示。',
+        bohrOrbitScaleNote: '※ 轨道半径和间隔只是说明模型，并非真实比例。',
+        bohrUvNote: 'n=1↔2 跃迁属于紫外线，紫色只是屏幕上的模型颜色。',
+        bohrRedNote: 'n=2↔3 跃迁与约 656 nm 的红光有关。',
+        deBrogliePathNote: '※ 波浪线不是电子的真实运动路径，而是物质波振幅和相位的模型表示。',
+        orbitalQualitativeNote: '※ 电子云的形状和亮度是概率概念的定性模型，并非精确计算或真实大小比例。'
+      },
+      ja: {
+        introIconNote: '※ この図は原子を表す象徴的なアイコンで、実際の原子構造や電子の経路ではありません。',
+        timelineNote: '※ 新しい模型が現れても、以前の模型は特定の現象を単純に説明するために使われます。科学の変化は常に一直線ではありません。',
+        magneticOut: '画面の外向き（⊙）',
+        magneticIn: '画面の内向き（⊗）',
+        magneticNone: '磁場なし',
+        rutherfordNote: '※ 金箔中の一つの原子核を大きく示した定性的な模型です。大きさ・距離・散乱角は実際の比や定量計算ではありません。',
+        bohrLevelScaleNote: '※ 水素のエネルギー準位の間隔は等しくありません。この図は定性的な表現です。',
+        bohrOrbitScaleNote: '※ 軌道半径と間隔は説明用の模型で、実際の比率ではありません。',
+        bohrUvNote: 'n=1↔2 の遷移は紫外線です。紫色は画面上で区別するための模型色です。',
+        bohrRedNote: 'n=2↔3 の遷移は約 656 nm の赤い光に対応します。',
+        deBrogliePathNote: '※ 波線は電子の実際の移動経路ではなく、物質波の振幅と位相を表す模型です。',
+        orbitalQualitativeNote: '※ 電子雲の形と明るさは確率概念の定性的な模型で、正確な計算値や実際の大きさの比ではありません。'
+      },
+      vi: {
+        introIconNote: '※ Hình này chỉ là biểu tượng nguyên tử, không phải cấu trúc thật của nguyên tử hay quỹ đạo electron.',
+        timelineNote: '※ Mô hình cũ vẫn có thể hữu ích để giải thích đơn giản một số hiện tượng. Sự phát triển khoa học không phải lúc nào cũng theo một đường thẳng.',
+        magneticOut: 'hướng ra khỏi màn hình (⊙)',
+        magneticIn: 'hướng vào màn hình (⊗)',
+        magneticNone: 'không có từ trường',
+        rutherfordNote: '※ Đây là mô hình định tính phóng to một hạt nhân trong lá vàng; kích thước, khoảng cách và góc tán xạ không được tính đúng tỉ lệ.',
+        bohrLevelScaleNote: '※ Các mức năng lượng của hydro không cách đều nhau. Hình này chỉ mang tính định tính.',
+        bohrOrbitScaleNote: '※ Bán kính và khoảng cách quỹ đạo chỉ là mô hình giải thích, không phải tỉ lệ thật.',
+        bohrUvNote: 'Chuyển mức n=1↔2 thuộc vùng tử ngoại. Màu tím chỉ là màu mô hình để nhìn thấy trên màn hình.',
+        bohrRedNote: 'Chuyển mức n=2↔3 liên quan đến ánh sáng đỏ khoảng 656 nm.',
+        deBrogliePathNote: '※ Đường gợn sóng không phải đường đi thật của electron; nó mô hình hóa biên độ và pha của sóng vật chất.',
+        orbitalQualitativeNote: '※ Hình dạng và độ sáng đám mây là mô hình định tính về xác suất, không phải phép tính chính xác hay tỉ lệ kích thước thật.'
+      }
+    };
+
+    function sciText(key) {
+      const pack = scienceText[state.lang] || scienceText.ko;
+      return pack[key] || scienceText.ko[key] || key;
+    }
 
     function getModelData(model = state.model) {
       return (modelDataByLang[state.lang] && modelDataByLang[state.lang][model]) || data[model];
@@ -2792,7 +2887,7 @@
       return template.replace(/\{(\w+)\}/g, (_, name) => tr(String(vars[name] ?? '')));
     }
 
-    // 현대 원자모형의 이중슬릿 실험 추가 문구입니다.
+    // 현대 원자모형의 이중 슬릿 실험 추가 문구입니다.
     // 기존 번역 구조를 크게 바꾸지 않고 새 실험에 필요한 문구만 별도로 관리합니다.
     const doubleSlitText = {
       ko: {
@@ -2811,7 +2906,7 @@
         probabilityPattern: '예상 검출 확률 분포',
         lightScreenPattern: '빛의 간섭무늬',
 
-        electronWaveGuide: '어느 슬릿을 지났는지 구별하지 않으면 두 가능한 경로가 함께 간섭무늬를 만듭니다.',
+        electronWaveGuide: '어느 슬릿을 지났는지 알 수 없을 때, 두 슬릿에 대응하는 확률진폭이 중첩되어 결과에 영향을 줍니다.',
         whichPathWeak: '어느 슬릿을 지났는지 구별 가능한 경로 정보가 기록되면 간섭무늬가 사라집니다.',
         lightWaveGuide: '두 슬릿에서 나온 빛의 파동이 겹쳐 밝고 어두운 무늬를 만듭니다.',
 
@@ -2819,6 +2914,8 @@
         photonStatus: '광자 검출 {count}개 · 파장 {wavelength} nm · 슬릿 간격(상대값) {gap}',
         electronGuide: '전자는 한 점에서 검출되지만, 반복하면 간섭 확률분포가 나타납니다.',
         lightGuide: '파장이 길수록 무늬 간격은 넓어지고, 슬릿 간격이 클수록 무늬 간격은 좁아집니다.',
+        electronRepresentationNote: '※ 파동선은 전자 물질이 갈라지는 모습이 아니라 확률진폭을 나타낸 모형입니다.',
+        photonRepresentationNote: '※ 파동선은 간섭 분포를 설명하는 모형이고, 점은 한 번의 광자 검출 사건을 나타냅니다.',
 
         observed: '있음',
         notObserved: '없음',
@@ -2869,7 +2966,7 @@
         probabilityPattern: 'expected detection probability',
         lightScreenPattern: 'light interference pattern',
 
-        electronWaveGuide: 'When the slit taken cannot be distinguished, the two possible paths together produce interference.',
+        electronWaveGuide: 'When no which-slit information is available, probability amplitudes associated with both slits superpose and affect the result.',
         whichPathWeak: 'If distinguishable which-path information is recorded, the interference pattern disappears.',
         lightWaveGuide: 'Light waves from the two slits overlap and form bright and dark fringes.',
 
@@ -2877,6 +2974,8 @@
         photonStatus: 'Photon detections {count} · wavelength {wavelength} nm · relative slit spacing {gap}',
         electronGuide: 'Each electron is detected at one point, while repeated detections form an interference probability distribution.',
         lightGuide: 'Longer wavelength makes wider fringes; larger slit spacing makes narrower fringes.',
+        electronRepresentationNote: '※ The wave lines model probability amplitudes; they do not show electron matter splitting into two pieces.',
+        photonRepresentationNote: '※ Wave lines model the interference distribution, while each dot is one photon-detection event.',
 
         observed: 'present',
         notObserved: 'absent',
@@ -2927,7 +3026,7 @@
         probabilityPattern: '预期探测概率分布',
         lightScreenPattern: '光的干涉条纹',
 
-        electronWaveGuide: '无法区分电子经过哪条缝时，两条可能路径共同形成干涉。',
+        electronWaveGuide: '无法获得电子经过哪条缝的信息时，与两条缝对应的概率振幅会叠加并影响结果。',
         whichPathWeak: '如果记录了可区分电子经过哪条缝的路径信息，干涉条纹会消失。',
         lightWaveGuide: '来自两个狭缝的光波相互叠加，形成明暗条纹。',
 
@@ -2935,6 +3034,8 @@
         photonStatus: '光子探测 {count} 个 · 波长 {wavelength} nm · 缝间距（相对值）{gap}',
         electronGuide: '每个电子在一个点被探测到，重复探测会形成干涉概率分布。',
         lightGuide: '波长越长，条纹间距越宽；缝间距越大，条纹间距越窄。',
+        electronRepresentationNote: '※ 波浪线表示概率振幅，并不表示电子物质分裂成两部分。',
+        photonRepresentationNote: '※ 波浪线用于说明干涉分布，每个点表示一次光子探测事件。',
 
         observed: '有',
         notObserved: '无',
@@ -2985,7 +3086,7 @@
         probabilityPattern: '予想される検出確率分布',
         lightScreenPattern: '光の干渉模様',
 
-        electronWaveGuide: 'どちらのスリットを通ったか区別できないとき、二つの可能な経路が干渉を作ります。',
+        electronWaveGuide: 'どちらのスリットを通ったかという情報がないとき、二つのスリットに対応する確率振幅が重なって結果に影響します。',
         whichPathWeak: 'どちらのスリットを通ったか区別できる経路情報が記録されると、干渉模様は消えます。',
         lightWaveGuide: '二つのスリットから出た光の波が重なり、明暗の縞を作ります。',
 
@@ -2993,6 +3094,8 @@
         photonStatus: '光子検出 {count}個・波長 {wavelength} nm・スリット間隔（相対値）{gap}',
         electronGuide: '電子は一つの点で検出されますが、繰り返すと干渉確率分布が現れます。',
         lightGuide: '波長が長いほど縞の間隔は広くなり、スリット間隔が大きいほど縞の間隔は狭くなります。',
+        electronRepresentationNote: '※ 波線は電子の物質が二つに分かれる様子ではなく、確率振幅を表す模型です。',
+        photonRepresentationNote: '※ 波線は干渉分布を説明する模型で、点は一回の光子検出事象を表します。',
 
         observed: 'あり',
         notObserved: 'なし',
@@ -3043,7 +3146,7 @@
         probabilityPattern: 'phân bố xác suất phát hiện dự kiến',
         lightScreenPattern: 'vân giao thoa ánh sáng',
 
-        electronWaveGuide: 'Khi không thể phân biệt electron đi qua khe nào, hai đường có thể cùng tạo ra giao thoa.',
+        electronWaveGuide: 'Khi không có thông tin electron đi qua khe nào, các biên độ xác suất ứng với hai khe chồng chập và ảnh hưởng đến kết quả.',
         whichPathWeak: 'Nếu thông tin phân biệt electron đi qua khe nào được ghi lại, vân giao thoa sẽ biến mất.',
         lightWaveGuide: 'Sóng ánh sáng từ hai khe chồng lên nhau và tạo các vân sáng tối.',
 
@@ -3051,6 +3154,8 @@
         photonStatus: 'Số photon phát hiện {count} · bước sóng {wavelength} nm · khoảng cách khe tương đối {gap}',
         electronGuide: 'Mỗi electron được phát hiện tại một điểm; các phép đo lặp lại tạo thành phân bố xác suất giao thoa.',
         lightGuide: 'Bước sóng dài hơn làm vân rộng hơn; khoảng cách khe lớn hơn làm vân hẹp hơn.',
+        electronRepresentationNote: '※ Các đường sóng mô hình hóa biên độ xác suất, không phải vật chất electron bị tách thành hai phần.',
+        photonRepresentationNote: '※ Các đường sóng mô hình hóa phân bố giao thoa, còn mỗi chấm là một sự kiện phát hiện photon.',
 
         observed: 'có',
         notObserved: 'không có',
@@ -3314,6 +3419,10 @@
         stopBtn.title = tx.stopSpeak;
       }
       document.getElementById('timelineTitle').textContent = tx.timelineTitle;
+      const timelineScienceNote = document.getElementById('timelineScienceNote');
+      if (timelineScienceNote) timelineScienceNote.textContent = sciText('timelineNote');
+      const introModelIconNote = document.getElementById('introModelIconNote');
+      if (introModelIconNote) introModelIconNote.textContent = sciText('introIconNote');
       document.getElementById('simulation').setAttribute('aria-label', tx.mainTitle);
       document.getElementById('simCanvas').setAttribute('aria-label', tx.caption);
       canvasCaption.textContent = tx.caption;
@@ -3585,8 +3694,6 @@
       const startX = tubeX + 64;
       const endX = tubeX + tubeW - 65;
       const baseY = CY;
-      const eDeflect = state.eField / 100;
-      const bDeflect = state.bField / 100;
       const voltageFactor = 0.75 + state.voltage / 100;
 
       // 진공관 외곽: 약간 기울어진 3차원 상자 느낌
@@ -3625,7 +3732,7 @@
       text(state.eField >= 0 ? tr('양전하판 (+)') : tr('음전하판 (−)'), CX, plateTop - 28, 20, state.eField >= 0 ? pal.proton : pal.electron2);
       text(state.eField >= 0 ? tr('음전하판 (−)') : tr('양전하판 (+)'), CX, plateBottom + 30, 20, state.eField >= 0 ? pal.electron2 : pal.proton);
 
-      // 좌우/앞뒤: 자기장 영역을 3차원처럼 표시
+      // 자기장 영역은 입체적으로 보이게 그리되, 두 면에 같은 자기장 방향을 표시합니다.
       ctx.save();
       ctx.globalAlpha = .88;
       ctx.fillStyle = 'rgba(167,139,250,.16)';
@@ -3642,15 +3749,19 @@
       text(tr('자기장 B'), CX + 240, tubeY + 50, 20, pal.accent3 || '#a78bfa');
       ctx.save();
       ctx.fillStyle = '#c4b5fd';
+      const fieldSymbol = Math.abs(state.bField) < 1 ? '0' : (state.bField > 0 ? '⊙' : '⊗');
       for (let i = 0; i < 3; i++) {
         const y = tubeY + 135 + i * 35;
-        text(state.bField >= 0 ? '⊙' : '⊗', CX - 208, y, 40, '#c4b5fd');
-        text(state.bField >= 0 ? '⊗' : '⊙', CX + 240, y, 40, '#c4b5fd');
+        text(fieldSymbol, CX - 208, y, 40, '#c4b5fd');
+        text(fieldSymbol, CX + 240, y, 40, '#c4b5fd');
       }
       ctx.restore();
 
-      const deflectY = (state.eField * .9 - state.bField * .35) / 100;
-      const deflectZ = state.bField / 100;
+      // 위 판이 +일 때 전기장은 아래쪽이지만, 음전하인 전자는 위쪽 힘을 받습니다.
+      // 전자빔이 오른쪽으로 진행하고 B가 화면 밖(⊙)을 향할 때에도 전자는 위쪽으로 휘어집니다.
+      const electricDeflectY = -state.eField * 0.9 / 100;
+      const magneticDeflectY = -state.bField * 0.35 / 100;
+      const deflectY = electricDeflectY + magneticDeflectY;
 
       // 예상 경로는 빔이 켜져 있을 때만 선명하게, 꺼져 있을 때는 점선 안내로 표시
       ctx.save();
@@ -3660,9 +3771,8 @@
       ctx.beginPath();
       for (let i = 0; i <= 80; i++) {
         const u = i / 80;
-        const z = deflectZ * 80 * Math.pow(u, 1.45) / voltageFactor;
-        const x = startX + (endX - startX) * u + z * .22;
-        const y = baseY + deflectY * 135 * Math.pow(u, 1.65) / voltageFactor - z * .22;
+        const x = startX + (endX - startX) * u;
+        const y = baseY + deflectY * 135 * Math.pow(u, 1.65) / voltageFactor;
         if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
       }
       ctx.stroke();
@@ -3678,10 +3788,9 @@
           p.lane = (Math.random() - .5) * 24;
         }
         const u = Math.max(0, p.t);
-        const z = deflectZ * 80 * Math.pow(u, 1.45) / voltageFactor;
-        const x = startX + (endX - startX) * u + z * .22;
-        const y = baseY + p.lane + deflectY * 135 * Math.pow(u, 1.65) / voltageFactor - z * .22;
-        if (u > 0) circle(x, y, 6 + Math.max(-2, z * .015), pal.electron2, '#fff', 1);
+        const x = startX + (endX - startX) * u;
+        const y = baseY + p.lane + deflectY * 135 * Math.pow(u, 1.65) / voltageFactor;
+        if (u > 0) circle(x, y, 6, pal.electron2, '#fff', 1);
       }
       if (state.thomsonSingleShot && state.thomsonParticles.length === 0) {
         state.thomsonBeamRunning = false;
@@ -3690,10 +3799,12 @@
 
       roundRect(105, 550, 750, 100, 16, 'rgba(15,23,42,.72)', 'rgba(148,163,184,.25)');
       const dirY = deflectY > .15 ? '아래쪽' : deflectY < -.15 ? '위쪽' : '거의 직진';
-      const dirZ = deflectZ > .15 ? '앞쪽' : deflectZ < -.15 ? '뒤쪽' : '중앙';
+      const fieldDir = Math.abs(state.bField) < 1
+        ? sciText('magneticNone')
+        : state.bField > 0 ? sciText('magneticOut') : sciText('magneticIn');
       const status = state.thomsonBeamRunning ? '빔 진행 중' : '대기 중';
-      wrappedText(formatMsg('cathodeObservation', { status, dirY, dirZ }), 480, 620, 720, state.lang === 'vi' ? 14 : 18, '#f8fafc', 'center', '700', null, 2);
-      text(formatMsg('currentPath', { dirY, dirZ }), 480, 580, 22, '#cbd5e1');
+      wrappedText(formatMsg('cathodeObservation', { status, dirY, fieldDir }), 480, 620, 720, state.lang === 'vi' ? 14 : 18, '#f8fafc', 'center', '700', null, 2);
+      text(formatMsg('currentPath', { dirY, fieldDir }), 480, 580, state.lang === 'vi' ? 18 : 21, '#cbd5e1');
     }
 
     function drawRutherfordModel() {
@@ -3807,7 +3918,13 @@
         return { x: startX + (foilX - startX - 38) * k, y: p.y0 - p.sign * 22 * k };
       }
       const k = (u - .5) / .5;
-      return { x: foilX - 38 - 360 * k, y: p.y0 - p.sign * 22 + p.sign * 125 * k };
+      const start = { x: foilX - 38, y: p.y0 - p.sign * 22 };
+      const endAngle = Math.PI + p.sign * 0.65;
+      const end = { x: CX + Math.cos(endAngle) * 325, y: CY + Math.sin(endAngle) * 325 };
+      return {
+        x: start.x + (end.x - start.x) * k,
+        y: start.y + (end.y - start.y) * k
+      };
     }
 
     function drawRutherfordScattering() {
@@ -3842,8 +3959,16 @@
       ctx.beginPath();
       ctx.arc(CX, CY, 325, -1.15, 1.15);
       ctx.stroke();
+      // 후방 산란 입자를 검출하는 왼쪽 위·아래 검출기 구간
+      ctx.beginPath();
+      ctx.arc(CX, CY, 325, Math.PI - 0.95, Math.PI - 0.45);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.arc(CX, CY, 325, Math.PI + 0.45, Math.PI + 0.95);
+      ctx.stroke();
       ctx.restore();
       text(tr('검출 화면'), CX + 250, CY - 250, 20, pal.cloud, 'left');
+      text(tr('검출 화면'), CX - 250, CY - 250, 18, pal.cloud, 'right');
 
       function strokeAlphaPath(path, type, alpha = 1) {
         if (!path || path.length < 2) return;
@@ -3874,8 +3999,9 @@
         }
       }
 
-      roundRect(104, 550, 752, 58, 16, 'rgba(15,23,42,.74)', 'rgba(148,163,184,.25)');
-      text(formatMsg('alphaCounts', state.alphaCounts), 480, 580, state.lang === 'vi' ? 18 : 21, '#f8fafc');
+      roundRect(84, 540, 792, 125, 16, 'rgba(15,23,42,.74)', 'rgba(148,163,184,.25)');
+      text(formatMsg('alphaCounts', state.alphaCounts), 480, 565, state.lang === 'vi' ? 18 : 21, '#f8fafc');
+      wrappedText(sciText('rutherfordNote'), 480, 615, 745, state.lang === 'vi' ? 13 : 14, '#cbd5e1', 'center', '600', null, 3);
     }
 
     function drawPhotonArrow(x0, y0, x1, y1, color) {
@@ -3925,6 +4051,18 @@
       ctx.restore();
     }
 
+    function getBohrPhotonStyle(photon) {
+      const low = Math.min(photon.fromN ?? state.bohrN, photon.toN ?? state.bohrN);
+      const high = Math.max(photon.fromN ?? state.bohrN, photon.toN ?? state.bohrN);
+      if (low === 1 && high === 2) {
+        return { color: '#a78bfa', note: sciText('bohrUvNote') };
+      }
+      if (low === 2 && high === 3) {
+        return { color: '#ff5b5b', note: sciText('bohrRedNote') };
+      }
+      return { color: '#facc15', note: sciText('bohrOrbitScaleNote') };
+    }
+
     function drawBohrOrbit() {
       const pal = getPal();
       drawAtomLabel('보어: 허용된 에너지 준위와 궤도');
@@ -3948,6 +4086,7 @@
       circle(ex, ey, 14, pal.electron, '#fff', 2);
       text(tr('전자'), ex + 28, ey, 15, '#f8fafc', 'left');
 
+      let photonNote = sciText('bohrOrbitScaleNote');
       if (state.bohrPhoton) {
         const ph = state.bohrPhoton;
         if (!ph.startedAt) ph.startedAt = performance.now();
@@ -3958,7 +4097,9 @@
         const x1 = ph.kind === 'absorb' ? CX - 65 : 840;
         const y0 = ph.kind === 'absorb' ? 125 : CY - 105;
         const y1 = ph.kind === 'absorb' ? CY - 105 : 125;
-        const color = ph.kind === 'absorb' ? pal.wave : pal.cloud;
+        const photonStyle = getBohrPhotonStyle(ph);
+        const color = photonStyle.color;
+        photonNote = photonStyle.note;
         const label = ph.kind === 'absorb' ? tr('빛 흡수 방향') : tr('빛 방출 방향');
 
         // 빛 파동: 약 1초 동안 화면에 남아 학생이 방향과 파동을 충분히 볼 수 있게 합니다.
@@ -4007,8 +4148,9 @@
         if (elapsed > 1100) state.bohrPhoton = null;
       }
 
-      roundRect(94, 600, 772, 70, 16, 'rgba(15,23,42,.72)', 'rgba(148,163,184,.25)');
-      wrappedText(formatMsg('bohrEnergy', { n: state.bohrN }), 480, 635, 730, state.lang === 'vi' ? 15 : 18, '#f8fafc', 'center', '700', null, 2);
+      roundRect(80, 585, 800, 95, 16, 'rgba(15,23,42,.72)', 'rgba(148,163,184,.25)');
+      wrappedText(formatMsg('bohrEnergy', { n: state.bohrN }), 480, 612, 735, state.lang === 'vi' ? 14 : 17, '#f8fafc', 'center', '700', null, 2);
+      wrappedText(photonNote, 480, 654, 735, state.lang === 'vi' ? 12 : 14, '#cbd5e1', 'center', '600', null, 2);
     }
 
     const hydrogenLines = [
@@ -4060,21 +4202,23 @@
       ctx.save();
       ctx.strokeStyle = 'rgba(226,232,240,.32)';
       ctx.lineWidth = 2;
-      for (let i = 0; i < 4; i++) {
-        const y = ey - 42 + i * 24;
+      const levelYs = { 5: ey - 42, 4: ey - 28, 3: ey - 7, 2: ey + 30 };
+      [5, 4, 3, 2].forEach(level => {
+        const y = levelYs[level];
         ctx.beginPath(); ctx.moveTo(ex - 80, y); ctx.lineTo(ex + 50, y); ctx.stroke();
-        text(`n=${5-i}`, ex + 70, y + 4, 13, '#94a3b8', 'left');
-      }
+        text(`n=${level}`, ex + 70, y + 4, 13, '#94a3b8', 'left');
+      });
       ctx.strokeStyle = pal.wave;
       ctx.lineWidth = 3;
-      ctx.beginPath(); ctx.moveTo(ex - 38, ey - 42); ctx.lineTo(ex - 38, ey + 30); ctx.stroke();
-      drawPhotonArrow(ex - 38, ey - 38, ex - 38, ey + 26, pal.wave);
+      ctx.beginPath(); ctx.moveTo(ex - 38, levelYs[5]); ctx.lineTo(ex - 38, levelYs[2]); ctx.stroke();
+      drawPhotonArrow(ex - 38, levelYs[5] + 4, ex - 38, levelYs[2] - 4, pal.wave);
       ctx.restore();
       text(tr('높은 에너지 → 낮은 에너지: 빛 방출'), ex - 16, ey - 80, 20, '#facc15');
 
-      roundRect(92, 500, 776, 85, 16, 'rgba(15,23,42,.72)', 'rgba(148,163,184,.25)');
-      wrappedText(tr('들뜬 수소 원자의 가시광선 스펙트럼에서는 특정 파장의 밝은 선들이 나타납니다.'), 480, 525, 720, 18, '#f8fafc', 'center', '700', null, 2);
-      text(tr('보어 모형은 이 선 스펙트럼을 에너지 준위 전이로 설명했습니다.'), 480, 555, 20, '#cbd5e1');
+      roundRect(92, 490, 776, 125, 16, 'rgba(15,23,42,.72)', 'rgba(148,163,184,.25)');
+      wrappedText(tr('들뜬 수소 원자의 가시광선 스펙트럼에서는 특정 파장의 밝은 선들이 나타납니다.'), 480, 515, 720, 18, '#f8fafc', 'center', '700', null, 2);
+      text(tr('보어 모형은 이 선 스펙트럼을 에너지 준위 전이로 설명했습니다.'), 480, 550, 19, '#cbd5e1');
+      wrappedText(sciText('bohrLevelScaleNote'), 480, 585, 720, state.lang === 'vi' ? 12 : 14, '#94a3b8', 'center', '600', null, 2);
     }
 
     function drawBohr() {
@@ -4089,7 +4233,8 @@
       const n = state.deBroglieN;
       const k = state.deBroglieFit ? n : n + 0.42;
       const amp = 20;
-      const phase = state.deBroglieAnimate ? state.time * 1.5 : 0;
+      const timeFactor = state.deBroglieAnimate ? Math.cos(state.time * 2.5) : 1;
+      const radialOffset = angle => amp * Math.sin(k * angle) * timeFactor;
 
       const grad = ctx.createRadialGradient(CX - 12, CY - 12, 1, CX, CY, 42);
       grad.addColorStop(0, '#fff'); grad.addColorStop(.25, pal.nucleus); grad.addColorStop(1, '#7c2d12');
@@ -4109,7 +4254,7 @@
       ctx.beginPath();
       for (let i = 0; i <= 420; i++) {
         const a = i / 420 * Math.PI * 2;
-        const r = baseR + amp * Math.sin(k * a + phase);
+        const r = baseR + radialOffset(a);
         const x = CX + Math.cos(a) * r;
         const y = CY + Math.sin(a) * r;
         if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
@@ -4119,8 +4264,8 @@
 
       if (!state.deBroglieFit) {
         const a = Math.PI * 1.96;
-        const r1 = baseR + amp * Math.sin(k * a + phase);
-        const r2 = baseR + amp * Math.sin(k * 0 + phase);
+        const r1 = baseR + radialOffset(a);
+        const r2 = baseR + radialOffset(0);
         const x1 = CX + Math.cos(a) * r1;
         const y1 = CY + Math.sin(a) * r1;
         const x2 = CX + Math.cos(0) * r2;
@@ -4136,11 +4281,12 @@
         text(formatMsg('deBroglieFit', { n }), CX, 110, 19, pal.wave);
       }
 
-      roundRect(102, 570, 756, 85, 16, 'rgba(15,23,42,.72)', 'rgba(148,163,184,.25)');
+      roundRect(92, 555, 776, 120, 16, 'rgba(15,23,42,.72)', 'rgba(148,163,184,.25)');
       const msg = state.deBroglieFit
         ? tr('허용된 정상파 조건: 전자의 물질파가 자기 자신과 같은 위상으로 이어집니다.')
         : tr('정상파 조건을 만족하지 않음: 한 바퀴 뒤 파동의 위상이 어긋납니다.');
-      wrappedText(msg, 480, 610, 720, state.lang === 'en' || state.lang === 'vi' ? 16 : 19, '#f8fafc', 'center', '700', null, 2);
+      wrappedText(msg, 480, 590, 720, state.lang === 'en' || state.lang === 'vi' ? 15 : 18, '#f8fafc', 'center', '700', null, 2);
+      wrappedText(sciText('deBrogliePathNote'), 480, 635, 720, state.lang === 'vi' ? 12 : 14, '#94a3b8', 'center', '600', null, 2);
     }
 
     function sampleModernPoint() {
@@ -4226,7 +4372,7 @@
       circle(sourceX - 10, CY, 11, pal.electron2, '#fff', 2);
       text(dsText('electronSource'), sourceX, CY + 84, 18, '#e2e8f0');
 
-      // 이중슬릿 장벽
+      // 이중 슬릿 장벽
       ctx.save();
       ctx.strokeStyle = 'rgba(226,232,240,.78)';
       ctx.lineWidth = 12;
@@ -4319,12 +4465,13 @@
         }
       }
 
-      roundRect(78, 602, 804, 78, 16, 'rgba(15,23,42,.74)', 'rgba(148,163,184,.25)');
+      roundRect(68, 580, 824, 110, 16, 'rgba(15,23,42,.74)', 'rgba(148,163,184,.25)');
       text(dsText('electronStatus', {
   count: state.doubleSlitHits.length,
   mode: state.doubleSlitWhichPath ? dsText('observed') : dsText('notObserved')
-}), 480, 625, 21, '#f8fafc');
-      wrappedText(dsText('electronGuide'), 480, 656, 750, 16, '#cbd5e1', 'center', '600', null, 2);
+}), 480, 605, 20, '#f8fafc');
+      wrappedText(dsText('electronGuide'), 480, 636, 770, 15, '#cbd5e1', 'center', '600', null, 2);
+      wrappedText(dsText('electronRepresentationNote'), 480, 670, 770, 12, '#94a3b8', 'center', '600', null, 2);
     }
 
 
@@ -4409,7 +4556,7 @@
       ctx.restore();
       text(dsText('lightSource'), sourceX, CY + 92, 18, '#e2e8f0');
 
-      // 이중슬릿 장벽
+      // 이중 슬릿 장벽
       ctx.save();
       ctx.strokeStyle = 'rgba(226,232,240,.78)';
       ctx.lineWidth = 12;
@@ -4479,13 +4626,14 @@
         }
       }
 
-      roundRect(78, 602, 804, 78, 16, 'rgba(15,23,42,.74)', 'rgba(148,163,184,.25)');
+      roundRect(68, 580, 824, 110, 16, 'rgba(15,23,42,.74)', 'rgba(148,163,184,.25)');
       text(dsText('photonStatus', {
         count: state.lightHits.length,
         wavelength: state.lightWavelength,
         gap: state.lightSlitGap
-      }), 480, 625, 21, '#f8fafc');
-      wrappedText(dsText('lightGuide'), 480, 656, 750, 16, '#cbd5e1', 'center', '600', null, 2);
+      }), 480, 605, 20, '#f8fafc');
+      wrappedText(dsText('lightGuide'), 480, 636, 770, 15, '#cbd5e1', 'center', '600', null, 2);
+      wrappedText(dsText('photonRepresentationNote'), 480, 670, 770, 12, '#94a3b8', 'center', '600', null, 2);
     }
 
 
@@ -4556,20 +4704,21 @@
         circle(p.x, p.y, 5.2, pal.cloud, 'rgba(255,255,255,.85)', 1);
       }
 
-      roundRect(88, 550, 784, 120, 16, 'rgba(15,23,42,.74)', 'rgba(148,163,184,.25)');
+      roundRect(78, 535, 804, 150, 16, 'rgba(15,23,42,.74)', 'rgba(148,163,184,.25)');
       text(
   formatMsg('modernCount', {
     brightness: state.cloudBrightness,
     count: state.measurePoints.length
   }),
   480,
-  586,
-  22,
+  565,
+  21,
   '#f8fafc'
 );
-      wrappedText(tr('동일한 상태로 준비한 전자를 반복 측정하면 검출점이 확률분포를 이룹니다.'), 480, 618, 730, 17, '#cbd5e1', 'center', '600', null, 2);
+      wrappedText(tr('동일한 상태로 준비한 전자를 반복 측정하면 검출점이 확률분포를 이룹니다.'), 480, 597, 745, 16, '#cbd5e1', 'center', '600', null, 2);
+      wrappedText(sciText('orbitalQualitativeNote'), 480, 632, 745, 12, '#94a3b8', 'center', '600', null, 2);
       if (state.modernOrbital === '2p') {
-        wrappedText(dsText('phaseColorNote'), 480, 650, 730, 13, '#94a3b8', 'center', '600', null, 2);
+        wrappedText(dsText('phaseColorNote'), 480, 662, 745, 12, '#94a3b8', 'center', '600', null, 2);
       }
     }
 
@@ -4712,14 +4861,18 @@
             button('n=3', () => { state.bohrN = 3; renderControls(); }, state.bohrN === 3 ? 'active' : ''),
             button('빛 흡수: 높은 에너지 준위', () => {
               if (state.bohrN >= 3) return;
-              state.bohrN++;
-              state.bohrPhoton = { kind:'absorb', t:0, startedAt: performance.now() };
+              const fromN = state.bohrN;
+              const toN = fromN + 1;
+              state.bohrN = toN;
+              state.bohrPhoton = { kind:'absorb', fromN, toN, t:0, startedAt: performance.now() };
               renderControls();
             }, 'good'),
             button('빛 방출: 낮은 에너지 준위', () => {
               if (state.bohrN <= 1) return;
-              state.bohrN--;
-              state.bohrPhoton = { kind:'emit', t:0, startedAt: performance.now() };
+              const fromN = state.bohrN;
+              const toN = fromN - 1;
+              state.bohrN = toN;
+              state.bohrPhoton = { kind:'emit', fromN, toN, t:0, startedAt: performance.now() };
               renderControls();
             }, 'warning')
           ]));
