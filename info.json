@@ -1,7 +1,10 @@
 {
   "version": {
-    "ko": "v2.3 시범판",
-    "en": "v2.3 pilot version"
+    "ko": "v2.4 시범판",
+    "en": "v2.4 pilot version",
+    "zh": "v2.4 pilot version",
+    "ja": "v2.4 pilot version",
+    "vi": "v2.4 pilot version"
   },
   "updatedAt": "2026-06-11",
 
